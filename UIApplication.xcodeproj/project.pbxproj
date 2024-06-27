@@ -15,6 +15,8 @@
 		30149C182C2CDFC9002D637D /* UIApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C172C2CDFC9002D637D /* UIApplicationTests.swift */; };
 		30149C222C2CDFC9002D637D /* UIApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C212C2CDFC9002D637D /* UIApplicationUITests.swift */; };
 		30149C242C2CDFC9002D637D /* UIApplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C232C2CDFC9002D637D /* UIApplicationUITestsLaunchTests.swift */; };
+		30149C312C2CF7A0002D637D /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C302C2CF7A0002D637D /* SwitchViewController.swift */; };
+		30149C332C2CF7F0002D637D /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C322C2CF7F0002D637D /* SliderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		30149C1D2C2CDFC9002D637D /* UIApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30149C212C2CDFC9002D637D /* UIApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationUITests.swift; sourceTree = "<group>"; };
 		30149C232C2CDFC9002D637D /* UIApplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30149C302C2CF7A0002D637D /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
+		30149C322C2CF7F0002D637D /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,8 @@
 		30149BFF2C2CDFC8002D637D /* UIApplication */ = {
 			isa = PBXGroup;
 			children = (
-				30149C002C2CDFC8002D637D /* AppDelegate.swift */,
-				30149C022C2CDFC8002D637D /* SceneDelegate.swift */,
-				30149C042C2CDFC8002D637D /* ViewController.swift */,
-				30149C092C2CDFC9002D637D /* Assets.xcassets */,
-				30149C0B2C2CDFC9002D637D /* LaunchScreen.storyboard */,
-				30149C0E2C2CDFC9002D637D /* Info.plist */,
+				30149C352C2CFA87002D637D /* Controllers */,
+				30149C342C2CFA17002D637D /* Application */,
 			);
 			path = UIApplication;
 			sourceTree = "<group>";
@@ -122,6 +122,28 @@
 				30149C232C2CDFC9002D637D /* UIApplicationUITestsLaunchTests.swift */,
 			);
 			path = UIApplicationUITests;
+			sourceTree = "<group>";
+		};
+		30149C342C2CFA17002D637D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				30149C002C2CDFC8002D637D /* AppDelegate.swift */,
+				30149C022C2CDFC8002D637D /* SceneDelegate.swift */,
+				30149C092C2CDFC9002D637D /* Assets.xcassets */,
+				30149C0E2C2CDFC9002D637D /* Info.plist */,
+				30149C0B2C2CDFC9002D637D /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		30149C352C2CFA87002D637D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				30149C042C2CDFC8002D637D /* ViewController.swift */,
+				30149C302C2CF7A0002D637D /* SwitchViewController.swift */,
+				30149C322C2CF7F0002D637D /* SliderViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30149C052C2CDFC8002D637D /* ViewController.swift in Sources */,
+				30149C332C2CF7F0002D637D /* SliderViewController.swift in Sources */,
 				30149C012C2CDFC8002D637D /* AppDelegate.swift in Sources */,
+				30149C312C2CF7A0002D637D /* SwitchViewController.swift in Sources */,
 				30149C032C2CDFC8002D637D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +456,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N67F2VJLNG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UIApplication/Info.plist;
+				INFOPLIST_FILE = UIApplication/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -461,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N67F2VJLNG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UIApplication/Info.plist;
+				INFOPLIST_FILE = UIApplication/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
