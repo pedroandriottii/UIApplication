@@ -2,39 +2,51 @@ import UIKit
 
 final class SegmentedControlViewController: UIViewController {
     
-    var segmentControl = UISegmentedControl(items: ["Blue", "Green", "Red"])
-    var lblTitle = UILabel()
-    var colorView = UIView()
+    private var segmentControl: UISegmentedControl = {
+        let control = UISegmentedControl()
+        control.insertSegment(withTitle: "Blue", at: 0, animated: true)
+        control.insertSegment(withTitle: "Green", at: 1, animated: true)
+        control.insertSegment(withTitle: "Red", at: 2, animated: true)
+        control.selectedSegmentIndex = 0
+        control.translatesAutoresizingMaskIntoConstraints = false
+        return control
+    }()
+    
+    private var lblTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Segmented Control"
+        label.textColor = .red
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    private var colorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .blue
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         
-        // Label
-        
-        lblTitle.text = "Segmented Control"
-        lblTitle.textColor = .red
-        self.view.addSubview(lblTitle)
-        lblTitle.translatesAutoresizingMaskIntoConstraints = false
+        segmentControl.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
+
+        setupView()
+        setConstraints()
+    }
+    
+    private func setupView(){
+        view.backgroundColor = .white
+        view.addSubview(lblTitle)
+        view.addSubview(segmentControl)
+        view.addSubview(colorView)
+    }
+    
+    private func setConstraints(){
         NSLayoutConstraint.activate([
             lblTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            lblTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
-        ])
-        
-        // Segment Control
-        
-        segmentControl.selectedSegmentIndex = 0
-        segmentControl.addTarget(self, action: #selector(colorChanged(_:)), for: .valueChanged)
-        segmentControl.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(segmentControl)
-        
-        // Color View
-        
-        colorView.backgroundColor = .blue
-        colorView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(colorView)
-        
-        NSLayoutConstraint.activate([
+            lblTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            
             segmentControl.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
             segmentControl.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 4),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: segmentControl.trailingAnchor, multiplier: 4),

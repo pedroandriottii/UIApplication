@@ -9,46 +9,52 @@ import UIKit
 
 final class SwitchViewController: UIViewController {
     
-    var lblTitle = UILabel()
-    var lblDescription = UILabel()
-    var swToggle = UISwitch()
+    private var lblTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Switch"
+        label.textColor = .red
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    private var lblDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    private var swToggle: UISwitch = {
+        let toggle = UISwitch()
+        toggle.translatesAutoresizingMaskIntoConstraints = false
+        return toggle
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lblTitle.text = "Switch"
-        lblTitle.textColor = .red
-
-        // Switch
-        
         swToggle.setOn(false, animated: false)
         swToggle.addTarget(self, action: #selector(updateSwitch), for: .valueChanged)
-        updateSwitch()
+        
+        setupView()
+        setConstraints()
+    }
+    
+    private func setupView(){
         self.view.addSubview(swToggle)
-        swToggle.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(lblDescription)
+        self.view.addSubview(lblTitle)
+        updateSwitch()
+    }
+    
+    private func setConstraints(){
         NSLayoutConstraint.activate([
             swToggle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            swToggle.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        
-        // Label
-        
-        self.view.addSubview(lblDescription)
-        lblDescription.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
+            swToggle.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
             lblDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            lblDescription.topAnchor.constraint(equalTo: swToggle.bottomAnchor, constant: 20.0)
-        ])
-        
-        // Label
-        
-        self.view.addSubview(lblTitle)
-        lblTitle.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
+            lblDescription.topAnchor.constraint(equalTo: swToggle.bottomAnchor, constant: 20.0),
+            
             lblTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             lblTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60.0)
         ])
-        
     }
     
     @objc func updateSwitch() {

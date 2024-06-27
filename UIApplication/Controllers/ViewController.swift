@@ -28,8 +28,8 @@ final class TabBarController: UITabBarController{
         items[0].image = UIImage(systemName: "rays")
         items[1].image = UIImage(systemName: "slider.horizontal.below.rectangle")
         items[2].image = UIImage(systemName: "rectangle.split.3x1.fill")
-        items[3].image = UIImage(systemName: "person")
-        items[4].image = UIImage(systemName: "trash")
+        items[3].image = UIImage(systemName: "appwindow.swipe.rectangle")
+        items[4].image = UIImage(systemName: "filemenu.and.selection")
         
     }
 }

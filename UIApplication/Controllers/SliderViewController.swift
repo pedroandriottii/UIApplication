@@ -9,54 +9,61 @@ import UIKit
 
 final class SliderViewController: UIViewController{
     
-    var slider = UISlider()
-    var label = UILabel()
-    var lblTitle = UILabel()
+    private var slider: UISlider = {
+        let variable = UISlider()
+        variable.frame = CGRect()
+        variable.minimumValue = 1
+        variable.maximumValue = 100
+        variable.value = 1
+        variable.translatesAutoresizingMaskIntoConstraints = false
+        return variable
+    }()
+    
+    private var lblMain: UILabel = {
+        var label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private var lblTitle: UILabel = {
+        var label = UILabel()
+        label.text = "Slider"
+        label.textColor = .red
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Label
-        
-        view.backgroundColor = .white
-        lblTitle.text = "Slider"
-        lblTitle.textColor = .red
-        self.view.addSubview(lblTitle)
-        lblTitle.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            lblTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            lblTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
-        ])
-        
-        // Slider
-        
-        slider.frame = CGRect()
-        slider.minimumValue = 1
-        slider.maximumValue = 100
-        slider.value = 1
-        self.view.addSubview(slider)
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            slider.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            slider.widthAnchor.constraint(equalToConstant: 200)
-        ])
+
         slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         
-        // Label
-        
-        label.frame = CGRect()
-        label.textColor = .black
-        label.textAlignment = .center
-        self.view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.topAnchor.constraint(equalTo: slider.topAnchor, constant: 60)
-        ])
-        
+        setupView()
+        setConstraints()
+    }
+    
+    private func setupView(){
+        view.backgroundColor = .white
+        view.addSubview(lblTitle)
+        view.addSubview(slider)
+        view.addSubview(lblMain)
         updateScreen(with: slider.value)
-        
+    }
+    
+    private func setConstraints(){
+        NSLayoutConstraint.activate([
+            lblTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lblTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            
+            slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            slider.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            slider.widthAnchor.constraint(equalToConstant: 200),
+            
+            lblMain.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lblMain.topAnchor.constraint(equalTo: slider.topAnchor, constant: 60)
+        ])
     }
     
     @objc func sliderValueChanged(_ sender: UISlider){
@@ -64,13 +71,12 @@ final class SliderViewController: UIViewController{
     }
     
     func updateScreen(with value: Float){
-        label.text = String(format: "%.2f", value)
+        lblMain.text = String(format: "%.2f", value)
         
         let grayValue = CGFloat(value/100)
         self.view.backgroundColor = UIColor(white: grayValue, alpha: 1.0)
         
         let oppositeGrayValue = 1.0 - grayValue
-        label.textColor = UIColor(white: oppositeGrayValue, alpha: 1.0)
-        
+        lblMain.textColor = UIColor(white: oppositeGrayValue, alpha: 1.0)
     }
 }
