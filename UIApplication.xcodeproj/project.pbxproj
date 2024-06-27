@@ -17,6 +17,7 @@
 		30149C242C2CDFC9002D637D /* UIApplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C232C2CDFC9002D637D /* UIApplicationUITestsLaunchTests.swift */; };
 		30149C312C2CF7A0002D637D /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C302C2CF7A0002D637D /* SwitchViewController.swift */; };
 		30149C332C2CF7F0002D637D /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C322C2CF7F0002D637D /* SliderViewController.swift */; };
+		30149C372C2D0461002D637D /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C362C2D0461002D637D /* SegmentedControlViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		30149C232C2CDFC9002D637D /* UIApplicationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		30149C302C2CF7A0002D637D /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		30149C322C2CF7F0002D637D /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		30149C362C2D0461002D637D /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				30149C042C2CDFC8002D637D /* ViewController.swift */,
 				30149C302C2CF7A0002D637D /* SwitchViewController.swift */,
 				30149C322C2CF7F0002D637D /* SliderViewController.swift */,
+				30149C362C2D0461002D637D /* SegmentedControlViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				30149C012C2CDFC8002D637D /* AppDelegate.swift in Sources */,
 				30149C312C2CF7A0002D637D /* SwitchViewController.swift in Sources */,
 				30149C032C2CDFC8002D637D /* SceneDelegate.swift in Sources */,
+				30149C372C2D0461002D637D /* SegmentedControlViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
