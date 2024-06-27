@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController{
+final class TabBarController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTabBarController()
@@ -31,21 +31,5 @@ class TabBarController: UITabBarController{
         items[3].image = UIImage(systemName: "person")
         items[4].image = UIImage(systemName: "trash")
         
-    }
-}
-
-class PageControlViewController: UIViewController{
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .yellow
-    }
-}
-
-class PickerViewController: UIViewController{
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .purple
     }
 }

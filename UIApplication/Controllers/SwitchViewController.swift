@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SwitchViewController: UIViewController {
+final class SwitchViewController: UIViewController {
     
     var lblTitle = UILabel()
     var lblDescription = UILabel()
@@ -18,11 +18,12 @@ class SwitchViewController: UIViewController {
         
         lblTitle.text = "Switch"
         lblTitle.textColor = .red
+
+        // Switch
         
         swToggle.setOn(false, animated: false)
         swToggle.addTarget(self, action: #selector(updateSwitch), for: .valueChanged)
         updateSwitch()
-        
         self.view.addSubview(swToggle)
         swToggle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -30,12 +31,16 @@ class SwitchViewController: UIViewController {
             swToggle.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
+        // Label
+        
         self.view.addSubview(lblDescription)
         lblDescription.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             lblDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             lblDescription.topAnchor.constraint(equalTo: swToggle.bottomAnchor, constant: 20.0)
         ])
+        
+        // Label
         
         self.view.addSubview(lblTitle)
         lblTitle.translatesAutoresizingMaskIntoConstraints = false

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SliderViewController: UIViewController{
+final class SliderViewController: UIViewController{
     
     var slider = UISlider()
     var label = UILabel()
@@ -15,6 +15,8 @@ class SliderViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Label
         
         view.backgroundColor = .white
         lblTitle.text = "Slider"
@@ -25,6 +27,8 @@ class SliderViewController: UIViewController{
             lblTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             lblTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
         ])
+        
+        // Slider
         
         slider.frame = CGRect()
         slider.minimumValue = 1
@@ -37,6 +41,9 @@ class SliderViewController: UIViewController{
             slider.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             slider.widthAnchor.constraint(equalToConstant: 200)
         ])
+        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        
+        // Label
         
         label.frame = CGRect()
         label.textColor = .black
@@ -47,8 +54,6 @@ class SliderViewController: UIViewController{
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.topAnchor.constraint(equalTo: slider.topAnchor, constant: 60)
         ])
-        
-        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         
         updateScreen(with: slider.value)
         

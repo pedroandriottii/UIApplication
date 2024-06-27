@@ -18,6 +18,8 @@
 		30149C312C2CF7A0002D637D /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C302C2CF7A0002D637D /* SwitchViewController.swift */; };
 		30149C332C2CF7F0002D637D /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C322C2CF7F0002D637D /* SliderViewController.swift */; };
 		30149C372C2D0461002D637D /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C362C2D0461002D637D /* SegmentedControlViewController.swift */; };
+		30149C392C2D0973002D637D /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C382C2D0973002D637D /* PageControlViewController.swift */; };
+		30149C3B2C2D3A14002D637D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30149C3A2C2D3A14002D637D /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		30149C302C2CF7A0002D637D /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		30149C322C2CF7F0002D637D /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		30149C362C2D0461002D637D /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
+		30149C382C2D0973002D637D /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
+		30149C3A2C2D3A14002D637D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				30149C302C2CF7A0002D637D /* SwitchViewController.swift */,
 				30149C322C2CF7F0002D637D /* SliderViewController.swift */,
 				30149C362C2D0461002D637D /* SegmentedControlViewController.swift */,
+				30149C382C2D0973002D637D /* PageControlViewController.swift */,
+				30149C3A2C2D3A14002D637D /* PickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,7 +287,9 @@
 			files = (
 				30149C052C2CDFC8002D637D /* ViewController.swift in Sources */,
 				30149C332C2CF7F0002D637D /* SliderViewController.swift in Sources */,
+				30149C3B2C2D3A14002D637D /* PickerViewController.swift in Sources */,
 				30149C012C2CDFC8002D637D /* AppDelegate.swift in Sources */,
+				30149C392C2D0973002D637D /* PageControlViewController.swift in Sources */,
 				30149C312C2CF7A0002D637D /* SwitchViewController.swift in Sources */,
 				30149C032C2CDFC8002D637D /* SceneDelegate.swift in Sources */,
 				30149C372C2D0461002D637D /* SegmentedControlViewController.swift in Sources */,
