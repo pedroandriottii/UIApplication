@@ -12,7 +12,7 @@ class PickerViewController: UIViewController{
     let items = ["Brasil", "Estados Unidos", "Espanha", "França", "Argentina"]
     
     private var picker: UIPickerView = {
-       let picker = UIPickerView()
+        let picker = UIPickerView()
        picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
     }()
@@ -61,7 +61,7 @@ class PickerViewController: UIViewController{
             lblMain.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             lblMain.bottomAnchor.constraint(equalTo: picker.topAnchor, constant: -20),
             lblMain.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            lblMain.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            lblMain.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
 }
@@ -83,3 +83,5 @@ extension PickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         lblMain.text = items[row]
     }
 }
+
+

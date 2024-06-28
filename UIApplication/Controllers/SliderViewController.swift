@@ -49,7 +49,7 @@ final class SliderViewController: UIViewController{
         view.addSubview(lblTitle)
         view.addSubview(slider)
         view.addSubview(lblMain)
-        updateScreen(with: slider.value)
+        updateScreen(value: slider.value)
     }
     
     private func setConstraints(){
@@ -67,10 +67,10 @@ final class SliderViewController: UIViewController{
     }
     
     @objc func sliderValueChanged(_ sender: UISlider){
-        updateScreen(with: sender.value)
+        updateScreen(value: sender.value)
     }
     
-    func updateScreen(with value: Float){
+    func updateScreen(value: Float){
         lblMain.text = String(format: "%.2f", value)
         
         let grayValue = CGFloat(value/100)

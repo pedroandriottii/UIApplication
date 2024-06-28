@@ -35,13 +35,13 @@ final class SwitchViewController: UIViewController {
         
         setupView()
         setConstraints()
+        updateSwitch()
     }
     
     private func setupView(){
-        self.view.addSubview(swToggle)
-        self.view.addSubview(lblDescription)
-        self.view.addSubview(lblTitle)
-        updateSwitch()
+        view.addSubview(swToggle)
+        view.addSubview(lblDescription)
+        view.addSubview(lblTitle)
     }
     
     private func setConstraints(){

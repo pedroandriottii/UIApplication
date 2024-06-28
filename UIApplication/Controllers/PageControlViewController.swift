@@ -29,17 +29,19 @@ final class PageControlViewController: UIViewController{
     }()
     private var nextBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Next", for: .normal)
+        btn.setImage(UIImage(systemName: "arrow.right"), for: .normal)
         btn.backgroundColor = .white
-        btn.setTitleColor(.gray, for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.layer.cornerRadius = 10
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     private var previousBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Previous", for: .normal)
+        btn.setImage(UIImage(systemName: "arrow.left"), for: .normal)
         btn.backgroundColor = .white
-        btn.setTitleColor(.blue, for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.layer.cornerRadius = 10
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
         
@@ -76,16 +78,19 @@ final class PageControlViewController: UIViewController{
     private func setConstraints(){
         NSLayoutConstraint.activate([
             lblTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            lblTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            lblTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             pageControl.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+ 
             
             nextBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             nextBtn.leftAnchor.constraint(equalTo: pageControl.rightAnchor, constant: 30),
+            nextBtn.widthAnchor.constraint(equalToConstant: 80),
             
             previousBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             previousBtn.rightAnchor.constraint(equalTo: pageControl.leftAnchor, constant: -30),
+            previousBtn.widthAnchor.constraint(equalToConstant: 80),
             
             colorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             colorView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -20),

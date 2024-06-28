@@ -3,10 +3,8 @@ import UIKit
 final class SegmentedControlViewController: UIViewController {
     
     private var segmentControl: UISegmentedControl = {
-        let control = UISegmentedControl()
-        control.insertSegment(withTitle: "Blue", at: 0, animated: true)
-        control.insertSegment(withTitle: "Green", at: 1, animated: true)
-        control.insertSegment(withTitle: "Red", at: 2, animated: true)
+        let items = ["Blue", "Green", "Red"]
+        let control = UISegmentedControl(items: items)
         control.selectedSegmentIndex = 0
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
